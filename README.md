@@ -1,4 +1,4 @@
-# liftoff-cheese-api
+# Cheese Java REST API
 
 ### What is a REST API
 
