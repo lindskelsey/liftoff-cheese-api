@@ -186,3 +186,28 @@ public class CheeseController
 ```
 
 ### Testing with Postman
+
+Download Postman: https://www.getpostman.com/
+
+Select `POST` from the drop-down and enter the URL `http://localhost:8080/cheese/new`
+
+Select the `Body` tab and click `raw`. Then select `JSON` from the drop-down on the right.
+
+In the body below past this JSON, replacing the strings with your own data:
+
+```
+{
+	"name": "NameOfCheeseHere",
+	"description": "DescriptionHere"
+}
+```
+
+You should get a response with the ID auto-incremented.
+
+Go ahead and create a few more cheeses.
+
+Now we need to get our cheese from the database.
+
+Create a new tab in Postman and select `GET` from the drop-down and enter the URL `http://localhost:8080/cheese`
+
+Press enter and you should see a JSON containing all of your cheeses.
