@@ -145,7 +145,7 @@ public class CheeseService {
 }
 ```
 
-### Contoller
+### Controller
 
 Create a Package called `controller` and a Java Class called `CheeseController`
 
