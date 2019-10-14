@@ -1,10 +1,29 @@
 # Cheese Java REST API
 
+This project will walk you through writing the code for a REST API in Java that will Create a Cheese and Get all Cheeses from the database.
+
+In LC101 we built a full-stack application (Cheese MVC) using Springboot.  The code that ran on the client side (the view) and the code that ran on the server side (model and controller) ran in the same project. This can be a great way to learn how to build an application, but many modern web applications don't follow this pattern!
+
+Web applications follow a "separation of concerns" where the client-side code and server-side code are separate projects. For the server-side we wil build a REST API.
+
 ### What is a REST API
+
+A REST API will allow you to interact with data (CRUD operations) over HTTP, check out these links for more:
+
+https://www.youtube.com/watch?v=7YcW25PHnAA
+
+https://www.codecademy.com/articles/what-is-rest
+
+https://www.youtube.com/watch?v=s7wmiS2mSXY
+
 
 ### Generate a Spring Boot Project
 
-`build.gradle`
+Let's generate the a new Spring Boot project at https://start.spring.io/
+
+You'll want these dependencies: Spring Data JPA, Spring Web, Spring Boot DevTools, Lombok, and MySQL Driver
+
+Your `build.gradle` should look like this:
 
 ```
 dependencies {
@@ -20,7 +39,7 @@ dependencies {
 
 ### Set up database connection
 
-`application.properties`
+Creat a new database and user in PHPMyAdmin and configure `application.properties`
 
 ```
 # Database connection settings
