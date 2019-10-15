@@ -16,12 +16,16 @@ https://www.codecademy.com/articles/what-is-rest
 
 https://www.youtube.com/watch?v=s7wmiS2mSXY
 
+REST APIs can output data in JSON format or XML format. We'll be using JSON: https://www.w3schools.com/whatis/whatis_json.asp
+
 
 ### Generate a Spring Boot Project
 
 Let's generate the a new Spring Boot project at https://start.spring.io/
 
 You'll want these dependencies: Spring Data JPA, Spring Web, Spring Boot DevTools, Lombok, and MySQL Driver
+
+If you haven't used Lombok before-- this is a library that will reduce the amount of Java boilerplate code you will have to write. It will provide you with annotations to do things like create Getters, Setters, and Constructors without writing any additional code. Check out this tutorial: https://www.baeldung.com/intro-to-project-lombok
 
 Your `build.gradle` should look like this:
 
@@ -63,7 +67,13 @@ spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
 
 ### Model
 
+Now, let's make a model that represents the Cheese table in our database
+
 Create a Package called `model` and a Java Class called `Cheese`
+
+Notice here that `@Data` `@AllArgsConstructor` and `@NoArgsConstructor` are annotations from Lombok that reduce the code we need to write.
+
+Let's create a table that has an ID that is auto-generated, and takes a Name and Description as user input:
 
 ```
 package org.launchcode.liftoffapi.model;
@@ -95,7 +105,11 @@ public class Cheese
 
 ### Repository
 
+Now let's create a Repository interface so JPA can communicate with our database.
+
 Create a Package called `repository` and a Java Class called `CheeseRepository`
+
+The methods we'll be using are from `JpaRepository` so we don't need to write any additional code here.
 
 ```
 package org.launchcode.liftoffapi.repository;
@@ -112,7 +126,13 @@ public interface CheeseRepository extends JpaRepository<Cheese, Long>
 
 ### Service 
 
+Next, we'll need to create a Service. 
+
 Create a Package called `service` and a Java Class called `CheeseService`
+
+When you built your assignments in LC101, you probably had a lot of logic in your controller.  However, our controllers should only help us organize our application and determine what actions to take. The controller will call another file called a service, which is the piece of code that does the work.
+
+Check out this article on a Service vs Controller (it talks about Node, but the concept is the same in any language): https://www.coreycleary.me/what-is-the-difference-between-controllers-and-services-in-node-rest-apis/
 
 ```
 package org.launchcode.liftoffapi.service;
@@ -147,7 +167,19 @@ public class CheeseService {
 
 ### Controller
 
+Last step-- we need to write a Controller so our Java knows what to do when someone interacts with our app.
+
 Create a Package called `controller` and a Java Class called `CheeseController`
+
+In this code you'll see `@RestController` instead of `@Controller`. Check out the difference here: https://javarevisited.blogspot.com/2017/08/difference-between-restcontroller-and-controller-annotations-spring-mvc-rest.html
+
+Now let's create our `/cheese` endpoint
+
+Inside we have two operations, GET and POST
+
+With this code, when we hit `/cheese` we will execute a GET to return all cheeses from the table.
+
+When we hit `cheese/new` with a POST and include a `body` (the data you want to put in the table) then we will add a cheese to the table.
 
 ```
 package org.launchcode.liftoffapi.controller;
