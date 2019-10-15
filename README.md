@@ -10,22 +10,22 @@ Web applications follow a "separation of concerns" where the client-side code an
 
 A REST API will allow you to interact with data (CRUD operations) over HTTP, check out these links for more:
 
-https://www.youtube.com/watch?v=7YcW25PHnAA
+<https://www.youtube.com/watch?v=7YcW25PHnAA>
 
-https://www.codecademy.com/articles/what-is-rest
+<https://www.codecademy.com/articles/what-is-rest>
 
-https://www.youtube.com/watch?v=s7wmiS2mSXY
+<https://www.youtube.com/watch?v=s7wmiS2mSXY>
 
-REST APIs can output data in JSON format or XML format. We'll be using JSON: https://www.w3schools.com/whatis/whatis_json.asp
+REST APIs can output data in JSON format or XML format. We'll be using JSON: <https://www.w3schools.com/whatis/whatis_json.asp>
 
 
 ### Generate a Spring Boot Project
 
-Let's generate the a new Spring Boot project at https://start.spring.io/
+Let's generate the a new Spring Boot project at <https://start.spring.io/>
 
 You'll want these dependencies: Spring Data JPA, Spring Web, Spring Boot DevTools, Lombok, and MySQL Driver
 
-If you haven't used Lombok before-- this is a library that will reduce the amount of Java boilerplate code you will have to write. It will provide you with annotations to do things like create Getters, Setters, and Constructors without writing any additional code. Check out this tutorial: https://www.baeldung.com/intro-to-project-lombok
+If you haven't used Lombok before-- this is a library that will reduce the amount of Java boilerplate code you will have to write. It will provide you with annotations to do things like create Getters, Setters, and Constructors without writing any additional code. Check out this tutorial: <https://www.baeldung.com/intro-to-project-lombok>
 
 Your `build.gradle` should look like this:
 
@@ -132,7 +132,7 @@ Create a Package called `service` and a Java Class called `CheeseService`
 
 When you built your assignments in LC101, you probably had a lot of logic in your controller.  However, our controllers should only help us organize our application and determine what actions to take. The controller will call another file called a service, which is the piece of code that does the work.
 
-Check out this article on a Service vs Controller (it talks about Node, but the concept is the same in any language): https://www.coreycleary.me/what-is-the-difference-between-controllers-and-services-in-node-rest-apis/
+Check out this article on a Service vs Controller (it talks about Node, but the concept is the same in any language): <https://www.coreycleary.me/what-is-the-difference-between-controllers-and-services-in-node-rest-apis/>
 
 ```
 package org.launchcode.liftoffapi.service;
@@ -171,7 +171,7 @@ Last step-- we need to write a Controller so our Java knows what to do when some
 
 Create a Package called `controller` and a Java Class called `CheeseController`
 
-In this code you'll see `@RestController` instead of `@Controller`. Check out the difference here: https://javarevisited.blogspot.com/2017/08/difference-between-restcontroller-and-controller-annotations-spring-mvc-rest.html
+In this code you'll see `@RestController` instead of `@Controller`. Check out the difference here: <https://javarevisited.blogspot.com/2017/08/difference-between-restcontroller-and-controller-annotations-spring-mvc-rest.html>
 
 Now let's create our `/cheese` endpoint
 
@@ -219,7 +219,7 @@ public class CheeseController
 
 ### Testing with Postman
 
-Download Postman: https://www.getpostman.com/
+Download Postman: <https://www.getpostman.com/>
 
 Select `POST` from the drop-down and enter the URL `http://localhost:8080/cheese/new`
 
@@ -229,8 +229,8 @@ In the body below past this JSON, replacing the strings with your own data:
 
 ```
 {
-	"name": "NameOfCheeseHere",
-	"description": "DescriptionHere"
+	"name": "Cheddar",
+	"description": "The orange one"
 }
 ```
 
