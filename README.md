@@ -57,7 +57,7 @@ For simplicity's sake, my user, db, and password are all `cheese`
 
 Configuration should look like this:
 
-![db](/assets/db.png)
+![data](/assets/db_1.png)
 
 Configure `application.properties`
 
