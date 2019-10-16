@@ -1,10 +1,18 @@
 # Cheese Java REST API
 
-This project will walk you through writing the code for a REST API in Java that will Create a Cheese and Get all Cheeses from the database.
+This project will walk you through writing the code for a simple implementation of a REST API in Java. We won't worry about thing like error handling here- the idea is to familiarize yourself with these concepts so you can build on them in your capstone project.
+
+When we are done you will be able to Add a Cheese to the database via a POST request:
+
+![post](/assets/post_4.png)
+
+And retrieve all Cheeses from the database via a GET request:
+
+![get](/assets/get_2.png)
 
 In LC101 we built a full-stack application (Cheese MVC) using Springboot.  The code that ran on the client side (the view) and the code that ran on the server side (model and controller) ran in the same project. This can be a great way to learn how to build an application, but many modern web applications don't follow this pattern!
 
-Web applications follow a "separation of concerns" where the client-side code and server-side code are separate projects. For the server-side we wil build a REST API.
+Web applications follow a "separation of concerns" where the client-side code and server-side code are separate projects. For the server-side we will build a REST API.
 
 ### What is a REST API
 
@@ -43,7 +51,15 @@ dependencies {
 
 ### Set up database connection
 
-Creat a new database and user in PHPMyAdmin and configure `application.properties`
+Creat a new database and user in PHPMyAdmin
+
+For simplicity's sake, my user, db, and password are all `cheese`
+
+Configuration should look like this:
+
+![db](/assets/db.png)
+
+Configure `application.properties`
 
 ```
 # Database connection settings
@@ -223,7 +239,11 @@ Download Postman: <https://www.getpostman.com/>
 
 Select `POST` from the drop-down and enter the URL `http://localhost:8080/cheese/new`
 
+![post](/assets/post_1.png)
+
 Select the `Body` tab and click `raw`. Then select `JSON` from the drop-down on the right.
+
+![post](/assets/post_2.png)
 
 In the body below past this JSON, replacing the strings with your own data:
 
@@ -234,7 +254,11 @@ In the body below past this JSON, replacing the strings with your own data:
 }
 ```
 
+![post](/assets/post_3.png)
+
 You should get a response with the ID auto-incremented.
+
+![post](/assets/post_4.png)
 
 Go ahead and create a few more cheeses.
 
@@ -242,4 +266,12 @@ Now we need to get our cheese from the database.
 
 Create a new tab in Postman and select `GET` from the drop-down and enter the URL `http://localhost:8080/cheese`
 
+![post](/assets/get_1.png)
+
 Press enter and you should see a JSON containing all of your cheeses.
+
+![post](/assets/get_2.png)
+
+Everything looks good?...
+
+:star: Congrats! You just built a Java API :star:
