@@ -37,7 +37,7 @@ If you haven't used Lombok before-- this is a library that will reduce the amoun
 
 Your `build.gradle` should look like this:
 
-```
+```java
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -61,7 +61,7 @@ Configuration should look like this:
 
 Configure `application.properties`
 
-```
+```java
 # Database connection settings
 spring.datasource.url=jdbc:mysql://localhost:8889/cheese?serverTimezone=UTC
 spring.datasource.username=cheese
@@ -91,7 +91,7 @@ Notice here that `@Data` `@AllArgsConstructor` and `@NoArgsConstructor` are anno
 
 Let's create a table that has an ID that is auto-generated, and takes a Name and Description as user input:
 
-```
+```java
 package org.launchcode.liftoffapi.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -127,7 +127,7 @@ Create a Package called `repository` and a Java Class called `CheeseRepository`
 
 The methods we'll be using are from `JpaRepository` so we don't need to write any additional code here.
 
-```
+```java
 package org.launchcode.liftoffapi.repository;
 import org.launchcode.liftoffapi.model.Cheese;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -150,7 +150,7 @@ When you built your assignments in LC101, you probably had a lot of logic in you
 
 Check out this article on a Service vs Controller (it talks about Node, but the concept is the same in any language): <https://www.coreycleary.me/what-is-the-difference-between-controllers-and-services-in-node-rest-apis/>
 
-```
+```java
 package org.launchcode.liftoffapi.service;
 import org.launchcode.liftoffapi.model.Cheese;
 import org.launchcode.liftoffapi.repository.CheeseRepository;
@@ -197,7 +197,7 @@ With this code, when we hit `/cheese` we will execute a GET to return all cheese
 
 When we hit `cheese/new` with a POST and include a `body` (the data you want to put in the table) then we will add a cheese to the table.
 
-```
+```java
 package org.launchcode.liftoffapi.controller;
 import org.launchcode.liftoffapi.model.Cheese;
 import org.launchcode.liftoffapi.service.CheeseService;
