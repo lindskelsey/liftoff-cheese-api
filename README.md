@@ -272,6 +272,6 @@ Press enter and you should see a JSON containing all of your cheeses.
 
 ![post](/assets/get_2.png)
 
-Everything looks good?...
+Everything looks good?
 
-:star: Congrats! You just built a Java API :star:
+Congrats! You just built an API!
