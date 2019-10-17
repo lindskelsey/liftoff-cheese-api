@@ -123,7 +123,7 @@ public class Cheese
 
 Now let's create a Repository interface so JPA can communicate with our database.
 
-Create a Package called `repository` and a Java Class called `CheeseRepository`
+Create a Package called `repository` and a Java Interface called `CheeseRepository`
 
 The methods we'll be using are from `JpaRepository` so we don't need to write any additional code here.
 
