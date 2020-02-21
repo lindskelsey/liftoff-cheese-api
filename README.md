@@ -237,6 +237,10 @@ public class CheeseController
 
 Download Postman: <https://www.getpostman.com/>
 
+Postman is a tool that allows us to issue HTTP requests to easily test our APIs. While the Java App is running we can issue a request to localhost to interact with our API. Postman is a tool that is very commonly used on the job.
+
+First, let's create a Cheese in our database by issuing a POST request.
+
 Select `POST` from the drop-down and enter the URL `http://localhost:8080/cheese/new`
 
 ![post](/assets/post_1.png)
