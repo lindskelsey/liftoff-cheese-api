@@ -10,7 +10,7 @@ And retrieve all Cheeses from the database via a GET request:
 
 ![get](/assets/get_2.png)
 
-In LC101 we built a full-stack application (Cheese MVC) using Springboot.  The code that ran on the client side (the view) and the code that ran on the server side (model and controller) ran in the same project. This can be a great way to learn how to build an application, but many modern web applications don't follow this pattern!
+In LC101 we built a full-stack application (Cheese MVC in the old curriculum, TechJobs ion the new curriculum) using Spring Boot.  The code that ran on the client side (the view) and the code that ran on the server side (model and controller) ran in the same project. This can be a great way to learn how to build an application, but many modern web applications don't follow this pattern!
 
 Web applications follow a "separation of concerns" where the client-side code and server-side code are separate projects. For the server-side we will build a REST API.
 
@@ -30,6 +30,8 @@ REST APIs can output data in JSON format or XML format. We'll be using JSON: <ht
 ### Generate a Spring Boot Project
 
 Let's generate the a new Spring Boot project at <https://start.spring.io/>
+
+LC101 Instructions to generate Spring Boot project: <https://education.launchcode.org/java-web-development/chapters/spring-intro/initialize.html#initialize-a-spring-boot-project-text>
 
 You'll want these dependencies: Spring Data JPA, Spring Web, Spring Boot DevTools, Lombok, and MySQL Driver
 
@@ -51,13 +53,9 @@ dependencies {
 
 ### Set up database connection
 
-Creat a new database and user in PHPMyAdmin
+Creat a new database. For simplicity's sake, my user, db, and password are all `cheese`
 
-For simplicity's sake, my user, db, and password are all `cheese`
-
-Configuration should look like this:
-
-![data](/assets/db_1.png)
+LC101 instructions for MySql Workbench: <https://education.launchcode.org/java-web-development/appendices/sql-install.html?highlight=workbench>
 
 Configure `application.properties`
 
@@ -279,3 +277,5 @@ Press enter and you should see a JSON containing all of your cheeses.
 Everything looks good?
 
 Congrats! You just built an API!
+
+We built endpoints to Create and Read. Can you add Update and Delete endpoints to have full CRUD fucntionality? Try it on your own!
